@@ -1,9 +1,11 @@
 'use client'
 import {useUser} from '@clerk/nextjs'
 import {Container, Dialog, DialogTitle, DialogContent, DialogContentText, Box, Typography, TextField, Paper, Button, Grid, Card, CardActionArea, CardContent, DialogActions} from '@mui/material'
+import {db} from '@/firebase'
 import {writeBatch, collection} from 'firebase/firestore'
 import {useRouter} from 'next/navigation'
 import {useState} from 'react'
+import { doc, setDoc, getDoc } from 'firebase/firestore'
 
 export default function Generate() {
     const {isLoaded, isSignedIn, user} = useUser();
@@ -11,7 +13,7 @@ export default function Generate() {
     const [flipped, setFlipped] = useState({});
     const [text, setText] = useState('');
     const [name, setName] = useState('');
-    const {open, setOpen} = useState(false);
+    const [open, setOpen] = useState(false);
     const router = useRouter()
 
     const handleSubmit=async () => {
@@ -47,7 +49,7 @@ export default function Generate() {
         const userDocRef = doc(collection(db, 'users'), user.id)
         const docSnap = await getDoc(userDocRef)
 
-        if (docSnap.exist()) {
+        if (docSnap.exists()) {
             const collections = docSnap.data().flashcards || []
             if (collections.find((f) => f.name === name)) {
                 alert('Flashcard collection with the same name already exists.')
