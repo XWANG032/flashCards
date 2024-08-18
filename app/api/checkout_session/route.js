@@ -32,9 +32,9 @@ export async function POST(req){
                 price_data:{
                     currency: 'usd',
                     product_data:{
-                        name: "Pro Subscription",
+                        name: req.headers.get('nameOfSubscription'),
                     },
-                    unit_amount: formatAmountForStripe(10, 'usd'),
+                    unit_amount: formatAmountForStripe(req.headers.get('cost'), 'usd'),
                     recurring: {
                         interval: 'month',
                         interval_count: 1,
