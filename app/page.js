@@ -78,7 +78,7 @@ export default function Home() {
       </AppBar>
       
       <Box sx={{textAlign: 'center', my: 4}}>
-        <Typography variant="h2" gutterBottom>Welcome to Flashcard SaaS</Typography>
+        <Typography variant="h2" gutterBottom>Welcome to Flashcard SaaS!</Typography>
         <Typography variant="h5" gutterBottom>The easiest way to make flashcards from your text</Typography>
         <Button variant="contained" color="primary" sx = {{mt: 2}} href='generate'>Get Started</Button>
       </Box>
