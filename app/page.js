@@ -31,26 +31,28 @@ export default function Home() {
     }
   }
   return (
-    <Container maxWidth="100vw">
+    <>
+    <Box>
+      <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" style={{flexGrow: 1}}>Flashcard SaaS</Typography>
+            <SignedOut>
+              <Button color="inherit" href='sign-in'>Login</Button>
+              <Button color="inherit" href='sign-up'>Sign Up</Button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </Toolbar>
+        </AppBar>
+    </Box>
+    <Container>
       <Head>
         <title>Flashcard SaaS</title>
         <meta name = "description" content="Create flashcard from your text"></meta>
       </Head>
-
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" style={{flexGrow: 1}}>Flashcard SaaS</Typography>
-          <SignedOut>
-            <Button color="inherit" href='sign-in'>Login</Button>
-            <Button color="inherit" href='sign-up'>Sign Up</Button>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </Toolbar>
-      </AppBar>
       
-      <Box sx={{textAlign: 'center', my: 4}}>
+      <Box sx={{textAlign: 'center', my : 4}}>
         <Typography variant="h2" gutterBottom>Welcome to Flashcard SaaS</Typography>
         <Typography variant="h5" gutterBottom>The easiest way to make flashcards from your text</Typography>
         <Button variant="contained" color="primary" sx = {{mt: 2}}>Get Started</Button>
@@ -118,5 +120,6 @@ export default function Home() {
         </Grid>
       </Box>
     </Container>
+    </>
   )
 }
