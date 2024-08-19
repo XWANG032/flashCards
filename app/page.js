@@ -78,12 +78,13 @@ export default function Home() {
       </AppBar>
       
       <Box sx={{textAlign: 'center', my: 4}}>
-        <Typography variant="h2" gutterBottom>Welcome to Flashcard SaaS!</Typography>
-        <Typography variant="h5" gutterBottom>The easiest way to make flashcards from your text</Typography>
-        <Button variant="contained" color="primary" sx = {{mt: 2}} href='generate'>Get Started</Button>
+        <Typography variant="h2" gutterBottom>Flashcard SaaS!</Typography>
+        <Typography variant="h4" gutterBottom>The most convenient way to create flashcards!</Typography>
+        <Button variant="contained" color="primary" sx = {{mt: 2, mr: 4, bgcolor: 'skyblue', color:'black'}} href='generate'>Get Started</Button>
+        <Button variant="contained" color="secondary" sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flascards'>Flashcards</Button>
       </Box>
       <Box sx = {{my: 6}}>
-        <Typography variant="h4" gutterBottom>Features</Typography>
+        <Typography variant="h4" textAlign='center' color='violet' gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
