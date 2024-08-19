@@ -7,11 +7,38 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Home() {
-  const handleSubmit = async() => {
+  const handleSubmitPro = async() => {
     const checkoutSession = await fetch ('/api/checkout_session', {
       method: 'POST',
       headers: {
         origin: 'http://localhost:3000',
+        nameOfSubscription: 'Pro Subscription',
+        cost: 10
+      },
+    })
+    const checkoutSessionJson = await checkoutSession.json()
+
+    if (checkoutSession.statusCode === 500){
+      console.error(checkoutSession.message)
+      return
+    }
+
+    const stripe = await getStripe()
+    const {error} = await stripe.redirectToCheckout({
+      sessionId: checkoutSessionJson.id
+    })
+
+    if(error){
+      console.warn(error.message)
+    }
+  }
+  const handleSubmitBasic = async() => {
+    const checkoutSession = await fetch ('/api/checkout_session', {
+      method: 'POST',
+      headers: {
+        origin: 'http://localhost:3000',
+        nameOfSubscription: 'Basic Subscription',
+        cost: 5
       },
     })
     const checkoutSessionJson = await checkoutSession.json()
@@ -52,13 +79,14 @@ export default function Home() {
         <meta name = "description" content="Create flashcard from your text"></meta>
       </Head>
       
-      <Box sx={{textAlign: 'center', my : 4}}>
-        <Typography variant="h2" gutterBottom>Welcome to Flashcard SaaS</Typography>
-        <Typography variant="h5" gutterBottom>The easiest way to make flashcards from your text</Typography>
-        <Button variant="contained" color="primary" sx = {{mt: 2}}>Get Started</Button>
+      <Box sx={{textAlign: 'center', my: 4}}>
+        <Typography variant="h2" gutterBottom>Flashcard SaaS!</Typography>
+        <Typography variant="h4" gutterBottom>The most convenient way to create flashcards!</Typography>
+        <Button variant="contained" color="primary" sx = {{mt: 2, mr: 4, bgcolor: 'skyblue', color:'black'}} href='generate'>Get Started</Button>
+        <Button variant="contained" color="secondary" sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flascards'>Flashcards</Button>
       </Box>
       <Box sx = {{my: 6}}>
-        <Typography variant="h4" gutterBottom>Features</Typography>
+        <Typography variant="h4" textAlign='center' color='violet' gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
@@ -94,11 +122,12 @@ export default function Home() {
               borderRadius: 2,
             }}>
               <Typography variant="h5" gutterBottom>Basic</Typography>
-              <Typography variant="h6" gutterBottom>$5 / month</Typography>              <Typography>
+              <Typography variant="h6" gutterBottom>$5 / month</Typography>              
+              <Typography>
                 {' '}
                 Access to basic flashcard features and limited storage.
               </Typography>
-              <Button variant = 'contained' color = 'primary' sx = {{mt: 2}}>Choose Basic</Button>
+              <Button variant = 'contained' color = 'primary' sx = {{mt: 2}} onClick={handleSubmitBasic}>Choose Basic</Button>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -114,7 +143,7 @@ export default function Home() {
                 {' '}
                 Unlimited flashcards and storage, with priority support.
               </Typography>
-              <Button variant = 'contained' color = 'primary' sx = {{mt: 2}} onClick={handleSubmit}>Choose Pro</Button>
+              <Button variant = 'contained' color = 'primary' sx = {{mt: 2}} onClick={handleSubmitPro}>Choose Pro</Button>
             </Box>
           </Grid>
         </Grid>
