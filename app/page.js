@@ -63,11 +63,46 @@ export default function Home() {
       <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" style={{flexGrow: 1}}>Flashcard SaaS</Typography>
+            <Box sx={{display: 'flex'}}>
+                <Link href = "/">
+                <Button sx = {{
+                        color: 'white',
+                        transition: 'transform 0.3s ease',
+                        '&:hover':{
+                            transform : 'scale(1.15)'
+                        }
+                    }}>
+                        Home
+                    </Button>
+                </Link> 
+                <Link href = "/generate">
+                    <Button sx = {{
+                        color: 'white',
+                        transition: 'transform 0.3s ease',
+                        '&:hover':{
+                            transform : 'scale(1.15)'
+                        }
+                    }}>
+                            Generate
+                    </Button>
+                </Link>
+            </Box>
             <SignedOut>
               <Button color="inherit" href='sign-in'>Login</Button>
               <Button color="inherit" href='sign-up'>Sign Up</Button>
             </SignedOut>
             <SignedIn>
+            <Link href = "/flashcards">
+                <Button sx = {{
+                        color: 'white',
+                        transition: 'transform 0.3s ease',
+                        '&:hover':{
+                            transform : 'scale(1.15)'
+                        }
+                    }}>
+                        Flashcards
+                  </Button>
+                </Link>
               <UserButton />
             </SignedIn>
           </Toolbar>
@@ -80,13 +115,13 @@ export default function Home() {
       </Head>
       
       <Box sx={{textAlign: 'center', my: 4}}>
-        <Typography variant="h2" gutterBottom>Flashcard SaaS!</Typography>
-        <Typography variant="h4" gutterBottom>The most convenient way to create flashcards!</Typography>
+        <Typography variant="h2" sx={{fontWeight: 'bold' , color:'#D2042D'}}gutterBottom>Flashcard SaaS</Typography>
+        <Typography variant="h4" color='#D2042D' gutterBottom>The most convenient way to create flashcards!</Typography>
         <Button variant="contained" color="primary" sx = {{mt: 2, mr: 4, bgcolor: 'skyblue', color:'black'}} href='generate'>Get Started</Button>
-        <Button variant="contained" color="secondary" sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flascards'>Flashcards</Button>
+        <Button variant="contained" color="secondary" sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flashcards'>Flashcards</Button>
       </Box>
       <Box sx = {{my: 6}}>
-        <Typography variant="h4" textAlign='center' color='violet' gutterBottom>Features</Typography>
+        <Typography variant="h4" textAlign='center' gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
@@ -117,8 +152,8 @@ export default function Home() {
           <Grid item xs={12} md={6}>
             <Box sx = {{
               p: 3,
-              border: "1px solid black",
-              borderColor: 'red',
+              border: "2px solid blue",
+              boxShadow: 5,
               borderRadius: 2,
             }}>
               <Typography variant="h5" gutterBottom>Basic</Typography>
@@ -133,8 +168,8 @@ export default function Home() {
           <Grid item xs={12} md={6}>
             <Box sx = {{
               p: 3,
-              border: "1px solid black",
-              borderColor: 'red',
+              border: "2px solid blue",
+              boxShadow: 5,
               borderRadius: 2,
             }}>
               <Typography variant="h5" gutterBottom>Pro</Typography>
