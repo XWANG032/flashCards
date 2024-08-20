@@ -60,9 +60,9 @@ export default function Home() {
   return (
     <>
     <Box>
-      <AppBar position="static">
+      <AppBar position='static'>
           <Toolbar>
-            <Typography variant="h6" style={{flexGrow: 1}}>Flashcard SaaS</Typography>
+            <Typography variant='h6' style={{flexGrow: 1}}>Flashcard SaaS</Typography>
             <Box sx={{display: 'flex'}}>
                 <Link href = "/">
                 <Button sx = {{
@@ -115,30 +115,30 @@ export default function Home() {
       </Head>
       
       <Box sx={{textAlign: 'center', my: 4}}>
-        <Typography variant="h2" sx={{fontWeight: 'bold' , color:'#D2042D'}}gutterBottom>Flashcard SaaS</Typography>
-        <Typography variant="h4" color='#D2042D' gutterBottom>The most convenient way to create flashcards!</Typography>
-        <Button variant="contained" color="primary" sx = {{mt: 2, mr: 4, bgcolor: 'skyblue', color:'black'}} href='generate'>Get Started</Button>
-        <Button variant="contained" color="secondary" sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flashcards'>Flashcards</Button>
+        <Typography variant='h2' sx={{fontWeight: 'bold' , color:'#D2042D'}}gutterBottom>Flashcard SaaS</Typography>
+        <Typography variant='h4' color='#D2042D' gutterBottom>The most convenient way to create flashcards!</Typography>
+        <Button variant='contained' color='primary' sx = {{mt: 2, mr: 4, bgcolor: 'skyblue', color:'black'}} href='generate'>Get Started</Button>
+        <Button variant='contained' color='secondary' sx = {{mt: 2, ml: 4, bgcolor: 'violet', color: 'black'}} href='flashcards'>Flashcards</Button>
       </Box>
       <Box sx = {{my: 6}}>
-        <Typography variant="h4" textAlign='center' gutterBottom>Features</Typography>
+        <Typography variant='h4' textAlign='center' gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
+            <Typography variant='h6' gutterBottom>Easy Text Input</Typography>
             <Typography>
                 {' '}
                 Simply input your text and let our software do the rest. Creating flashcards has never been easier.
               </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>Smart Flashcards</Typography>
+            <Typography variant='h6' gutterBottom>Smart Flashcards</Typography>
             <Typography>
                 {' '}
                 Our AI intelligently breaks down your text into concise flashcards, perfect for studying.
               </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>Accessible Anywhere</Typography>
+            <Typography variant='h6' gutterBottom>Accessible Anywhere</Typography>
             <Typography>
                 {' '}
                 Access your flashcards from any device, at any time. Study on the go with ease.
@@ -147,17 +147,17 @@ export default function Home() {
         </Grid>
       </Box>
       <Box sx={{my: 6, textAlign: 'center'}}>
-        <Typography variant="h4" gutterBottom>Pricing</Typography>
+        <Typography variant='h4' gutterBottom>Pricing</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Box sx = {{
               p: 3,
-              border: "2px solid blue",
+              border: '2px solid blue',
               boxShadow: 5,
               borderRadius: 2,
             }}>
-              <Typography variant="h5" gutterBottom>Basic</Typography>
-              <Typography variant="h6" gutterBottom>$5 / month</Typography>              
+              <Typography variant='h5' gutterBottom>Basic</Typography>
+              <Typography variant='h6' gutterBottom>$5 / month</Typography>              
               <Typography>
                 {' '}
                 Access to basic flashcard features and limited storage.
@@ -168,12 +168,12 @@ export default function Home() {
           <Grid item xs={12} md={6}>
             <Box sx = {{
               p: 3,
-              border: "2px solid blue",
+              border: '2px solid blue',
               boxShadow: 5,
               borderRadius: 2,
             }}>
-              <Typography variant="h5" gutterBottom>Pro</Typography>
-              <Typography variant="h6" gutterBottom>$10 / month</Typography>
+              <Typography variant='h5' gutterBottom>Pro</Typography>
+              <Typography variant='h6' gutterBottom>$10 / month</Typography>
               <Typography>
                 {' '}
                 Unlimited flashcards and storage, with priority support.
