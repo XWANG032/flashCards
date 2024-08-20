@@ -74,7 +74,8 @@ export default function Generate() {
         router.push('/flashcards')
     }
 
-    return <Container maxWidth='100vw'>
+    return (
+    <Container maxWidth='100vw'>
         <Box sx={{mt: 4, mb: 6, display:'flex', flexDirection:'column', alignItems:'center'}}>
             <Typography variant='h4'>Generate Flashcards</Typography>
             <Paper sx={{p: 4, width:'100%'}}>
@@ -168,4 +169,5 @@ export default function Generate() {
             </DialogActions>
         </Dialog>
     </Container>
+    )
 }
