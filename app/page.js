@@ -75,7 +75,7 @@ export default function Home() {
                         Home
                     </Button>
                 </Link> 
-                <Link href = "/generate">
+                <Link href = '/generate'>
                     <Button sx = {{
                         color: 'white',
                         transition: 'transform 0.3s ease',
@@ -88,11 +88,11 @@ export default function Home() {
                 </Link>
             </Box>
             <SignedOut>
-              <Button color="inherit" href='sign-in'>Login</Button>
-              <Button color="inherit" href='sign-up'>Sign Up</Button>
+              <Button color='inherit' href='sign-in'>Login</Button>
+              <Button color='inherit' href='sign-up'>Sign Up</Button>
             </SignedOut>
             <SignedIn>
-            <Link href = "/flashcards">
+            <Link href = '/flashcards'>
                 <Button sx = {{
                         color: 'white',
                         transition: 'transform 0.3s ease',
@@ -111,7 +111,7 @@ export default function Home() {
     <Container>
       <Head>
         <title>Flashcard SaaS</title>
-        <meta name = "description" content="Create flashcard from your text"></meta>
+        <meta name = 'description' content='Create flashcard from your text'></meta>
       </Head>
       
       <Box sx={{textAlign: 'center', my: 4}}>

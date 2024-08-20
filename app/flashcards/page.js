@@ -68,7 +68,7 @@ export default function Flashcards(){
                             Generate
                     </Button>
                 </Link>
-                <Link href = "/flashcards">
+                <Link href = '/flashcards'>
                 <Button sx = {{
                         color: 'white',
                         transition: 'transform 0.3s ease',
@@ -81,8 +81,8 @@ export default function Flashcards(){
                 </Link>
             </Box>
             <SignedOut>
-              <Button color="inherit" href='sign-in'>Login</Button>
-              <Button color="inherit" href='sign-up'>Sign Up</Button>
+              <Button color='inherit' href='sign-in'>Login</Button>
+              <Button color='inherit' href='sign-up'>Sign Up</Button>
             </SignedOut>
             <SignedIn>
               <UserButton />
@@ -90,7 +90,7 @@ export default function Flashcards(){
           </Toolbar>
         </AppBar>
     </Box>
-    <Container maxwidth = "100vw">
+    <Container maxwidth = '100vw'>
         <Grid container spacing = {3} sx = {{
             mt: 4
         }}>
